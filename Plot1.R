@@ -1,4 +1,4 @@
-epc <- read.table("household_power_consumption.txt", header=T, sep=";") ## loads complete table into memory
+epc <- read.table("household_power_consumption.txt", header=T, sep=";") ## loads complete table into memory  -- assumes that the "household_power_consumption.txt" file is in the current working directory
 epc$Date <- as.Date(as.character(epc$Date), "%d/%m/%Y") ## converts the Date column to a Date data type (from factor via character)
 epcf <- subset(epc, epc$Date == "2007-02-01" | epc$Date == "2007-02-02") ## filters the rows to only include data from February 1st and 2nd, 2007
 epcf$Global_active_power <- as.numeric(as.character(epcf$Global_active_power)) ## converts the Global_active_power column to a Numeric data type (from factor via character)
